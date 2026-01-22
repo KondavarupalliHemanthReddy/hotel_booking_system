@@ -1,0 +1,212 @@
+{
+  "users": [
+    {
+      "id": "1481",
+      "name": "Hemanth",
+      "email": "hr3375827@gmail.com",
+      "password": "1234567"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Ocean View Resort",
+      "location": "Goa",
+      "price": 4500,
+      "rating": 4.6,
+      "image": "https://picsum.photos/seed/hotel1/800/500",
+      "description": "Luxury beachfront resort with stunning ocean views.",
+      "amenities": [
+        "Free WiFi",
+        "Swimming Pool",
+        "Beach Access",
+        "Spa"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mountain Bliss Hotel",
+      "location": "Manali",
+      "price": 3200,
+      "rating": 4.4,
+      "image": "https://picsum.photos/seed/hotel2/800/500",
+      "description": "Peaceful mountain stay surrounded by scenic hills.",
+      "amenities": [
+        "Free WiFi",
+        "Heater",
+        "Parking",
+        "Room Service"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "City Lights Inn",
+      "location": "Mumbai",
+      "price": 5200,
+      "rating": 4.2,
+      "image": "https://picsum.photos/seed/hotel3/800/500",
+      "description": "Modern hotel located in the heart of the city.",
+      "amenities": [
+        "Free WiFi",
+        "Gym",
+        "Restaurant",
+        "Bar"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Royal Heritage Palace",
+      "location": "Jaipur",
+      "price": 6100,
+      "rating": 4.8,
+      "image": "https://picsum.photos/seed/hotel4/800/500",
+      "description": "Experience royal living with traditional Rajasthani hospitality.",
+      "amenities": [
+        "Free WiFi",
+        "Pool",
+        "Cultural Shows",
+        "Fine Dining"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Backwater Retreat",
+      "location": "Kerala",
+      "price": 4000,
+      "rating": 4.5,
+      "image": "https://picsum.photos/seed/hotel5/800/500",
+      "description": "Relaxing retreat near serene backwaters.",
+      "amenities": [
+        "Free WiFi",
+        "Boat Ride",
+        "Ayurvedic Spa",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Desert Star Hotel",
+      "location": "Jaisalmer",
+      "price": 3600,
+      "rating": 4.3,
+      "image": "https://picsum.photos/seed/hotel6/800/500",
+      "description": "Comfortable desert stay with cultural experiences.",
+      "amenities": [
+        "Free WiFi",
+        "Camel Safari",
+        "Cultural Events",
+        "Parking"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Lake View Residency",
+      "location": "Udaipur",
+      "price": 4800,
+      "rating": 4.6,
+      "image": "https://picsum.photos/seed/hotel7/800/500",
+      "description": "Elegant stay overlooking beautiful lakes.",
+      "amenities": [
+        "Free WiFi",
+        "Lake View",
+        "Restaurant",
+        "Room Service"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Forest Hill Lodge",
+      "location": "Coorg",
+      "price": 3500,
+      "rating": 4.4,
+      "image": "https://picsum.photos/seed/hotel8/800/500",
+      "description": "Nature-friendly lodge surrounded by lush forests.",
+      "amenities": [
+        "Free WiFi",
+        "Nature Walks",
+        "Campfire",
+        "Parking"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Snow Peak Hotel",
+      "location": "Shimla",
+      "price": 4200,
+      "rating": 4.5,
+      "image": "https://picsum.photos/seed/hotel9/800/500",
+      "description": "Cozy hotel with panoramic snow mountain views.",
+      "amenities": [
+        "Free WiFi",
+        "Heater",
+        "Mountain View",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Sunset Bay Resort",
+      "location": "Andaman",
+      "price": 7000,
+      "rating": 4.9,
+      "image": "https://picsum.photos/seed/hotel10/800/500",
+      "description": "Premium island resort with private beach access.",
+      "amenities": [
+        "Free WiFi",
+        "Private Beach",
+        "Infinity Pool",
+        "Spa"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Premium View Resort",
+      "location": "Goa",
+      "price": 4500,
+      "rating": 4.6,
+      "image": "https://picsum.photos/seed/hotel1/800/500",
+      "description": "Luxury beachfront resort with stunning  views.",
+      "amenities": [
+        "Free WiFi",
+        "Swimming Pool",
+        "Beach Access",
+        "Spa"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Mountain Bliss Hotel",
+      "location": "Manali",
+      "price": 3200,
+      "rating": 4.4,
+      "image": "https://picsum.photos/seed/hotel2/800/500",
+      "description": "Peaceful mountain stay surrounded by scenic hills.",
+      "amenities": [
+        "Free WiFi",
+        "Heater",
+        "Parking",
+        "Room Service"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "ae67",
+      "userId": "1481",
+      "hotelId": "1",
+      "hotelName": "Ocean View Resort",
+      "checkIn": "2026-01-22",
+      "checkOut": "2026-01-23",
+      "guests": 1
+    },
+    {
+      "id": "53fa",
+      "userId": "1481",
+      "hotelId": "8",
+      "hotelName": "Forest Hill Lodge",
+      "checkIn": "2026-01-22",
+      "checkOut": "2026-01-24",
+      "guests": 1
+    }
+  ]
+}
