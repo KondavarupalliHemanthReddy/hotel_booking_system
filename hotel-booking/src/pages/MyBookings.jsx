@@ -8,7 +8,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/bookings?userId=${user.id}`
+      `https://hotel-booking-system-vq5g.onrender.com/bookings?userId=${user.id}`
     )
       .then(res => res.json())
       .then(data => setBookings(data));

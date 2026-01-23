@@ -10,7 +10,7 @@ const HotelDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/hotels/${id}`)
+    fetch(`https://hotel-booking-system-vq5g.onrender.com/hotels/${id}`)
       .then(res => res.json())
       .then(data => {
         setHotel(data);

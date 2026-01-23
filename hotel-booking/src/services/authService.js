@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://hotel-booking-system-vq5g.onrender.com";
 
 export const loginUser = async (email, password) => {
   const res = await fetch(
