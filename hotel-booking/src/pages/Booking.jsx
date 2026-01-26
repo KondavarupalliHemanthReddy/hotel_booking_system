@@ -43,7 +43,7 @@ const Booking = () => {
     };
 
     try {
-      await fetch("http://localhost:5000/bookings", {
+      await fetch("https://hotel-booking-system-vq5g.onrender.com/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
