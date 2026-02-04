@@ -14,7 +14,7 @@ const Booking = () => {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(1);
-
+  const today = new Date().toISOString().split("T")[0];
   useEffect(() => {
     fetch(`https://hotel-booking-system-vq5g.onrender.com/hotels/${id}`)
       .then(res => res.json())
@@ -88,6 +88,7 @@ const Booking = () => {
             <Form.Label>Check-in</Form.Label>
             <Form.Control
               type="date"
+              min={today}
               required
               onChange={(e) => setCheckIn(e.target.value)}
             />

@@ -1,3 +1,10 @@
-.hover:hover{
-height:250px ;
+.hover {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
 }

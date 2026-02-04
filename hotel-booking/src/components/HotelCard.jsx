@@ -1,6 +1,6 @@
 import { Card, Button, Badge } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import App.css
+import "../App.css"
 const HotelCard = ({ hotel }) => {
   const navigate = useNavigate();
 

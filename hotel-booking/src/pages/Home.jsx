@@ -1,14 +1,26 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col,Spinner } from "react-bootstrap";
 import HotelCard from "../components/HotelCard";
 import { useEffect, useState } from "react";
 const Home = () => {
 const [hotels, setHotels] = useState([]);
+const [loading,setLoading]=useState(true)
 
 useEffect(() => {
   fetch("https://hotel-booking-system-vq5g.onrender.com/hotels")
     .then(res => res.json())
-    .then(data => setHotels(data));
+    .then(data => {setHotels(data);
+      setLoading(false);
+    }); 
+
 }, []);
+
+if (loading) {
+    return (
+      <Container className="py-5 text-center">
+        <Spinner animation="border" />
+      </Container>
+    );
+  }
   return (
     <>
       {/* Hero Section */}
@@ -16,7 +28,7 @@ useEffect(() => {
         <Container>
           <h1 className="fw-bold">Find your perfect stay</h1>
           <p className="text-muted">
-            Discover hotels at the best prices
+            Discover hotels at the best prices in india
           </p>
         </Container>
       </div>

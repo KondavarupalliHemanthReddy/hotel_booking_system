@@ -7,23 +7,25 @@ const AppNavbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+     let sure=confirm("are you really want to logout")
+  if (sure){
     logoutUser();
-    navigate("/login");
+    navigate("/login");}
   };
 
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold">
-          🏨 StayFinder
+          🏨 Book My Hotel
         </Navbar.Brand>
 
         <Nav className="ms-auto">
           {user ? (
             <>
-             <Nav.Link as={Link} to="/my-bookings" className="me-3">
+             <Button as={Link} to="/my-bookings" variant="primary" className="me-3">
     My Bookings
-  </Nav.Link>
+  </Button>
               <Navbar.Text className="me-3">
                 Hi, {user.name}
               </Navbar.Text>
