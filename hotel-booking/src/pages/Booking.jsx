@@ -7,14 +7,16 @@ const Booking = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const user = getCurrentUser();
-
   const [hotel, setHotel] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(1);
+
   const today = new Date().toISOString().split("T")[0];
+
+  // Fetch hotel details
   useEffect(() => {
     fetch(`https://hotel-booking-system-vq5g.onrender.com/hotels/${id}`)
       .then(res => res.json())
@@ -25,7 +27,8 @@ const Booking = () => {
       .catch(() => setLoading(false));
   }, [id]);
 
-  const handleBooking = async (e) => {
+  // Handle booking → redirect to payment
+  const handleBooking = (e) => {
     e.preventDefault();
 
     if (checkOut <= checkIn) {
@@ -37,27 +40,18 @@ const Booking = () => {
       userId: user.id,
       hotelId: hotel.id,
       hotelName: hotel.name,
+      hotelPrice: hotel.price,
       checkIn,
       checkOut,
-      guests
+      guests,
+    
     };
 
-    try {
-      await fetch("https://hotel-booking-system-vq5g.onrender.com/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(booking)
-      });
-
-      navigate("/confirmation", { state: booking });
-    } catch (error) {
-      alert("Booking failed");
-    }
+    // 👉 Go to payment page instead of saving booking
+    navigate("/payment", { state: booking });
   };
 
-  // ⏳ Loading state
+  // Loading state
   if (loading) {
     return (
       <Container className="py-5 text-center">
@@ -66,7 +60,7 @@ const Booking = () => {
     );
   }
 
-  // ❌ Hotel not found
+  // Hotel not found
   if (!hotel || !hotel.id) {
     return (
       <Container className="py-5">
@@ -78,7 +72,7 @@ const Booking = () => {
   return (
     <Container className="py-5">
       <Card
-        className="shadow-sm border-0 rounded-4 p-4 mx-auto"
+        className="shadow-lg border-0 rounded-4 p-4 mx-auto"
         style={{ maxWidth: "500px" }}
       >
         <h3 className="fw-bold mb-3">Book {hotel.name}</h3>
@@ -98,6 +92,7 @@ const Booking = () => {
             <Form.Label>Check-out</Form.Label>
             <Form.Control
               type="date"
+              min={checkIn}
               required
               onChange={(e) => setCheckOut(e.target.value)}
             />
@@ -105,7 +100,10 @@ const Booking = () => {
 
           <Form.Group className="mb-3">
             <Form.Label>Guests</Form.Label>
-            <Form.Select onChange={(e) => setGuests(e.target.value)}>
+            <Form.Select
+              value={guests}
+              onChange={(e) => setGuests(Number(e.target.value))}
+            >
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
@@ -113,8 +111,12 @@ const Booking = () => {
             </Form.Select>
           </Form.Group>
 
-          <Button type="submit" variant="primary" className="w-100 rounded-pill">
-            Confirm Booking
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-100 rounded-pill"
+          >
+            Proceed to Payment
           </Button>
         </Form>
       </Card>

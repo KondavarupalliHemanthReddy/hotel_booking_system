@@ -8,6 +8,7 @@ import Booking from "./pages/Booking";
 import Confirmation from "./pages/Confirmation";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MyBookings from "./pages/MyBookings";
+import UPIPaymentPage from "./pages/UPIPaymentPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/hotel/:id" element={<HotelDetails />} />
+        <Route path="/payment" element={<UPIPaymentPage />} />
         <Route
           path="/booking/:id"
           element={

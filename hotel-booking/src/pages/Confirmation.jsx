@@ -15,7 +15,7 @@ const Confirmation = () => {
 
   return (
     <Container className="py-5 d-flex justify-content-center">
-      <Card className="shadow-sm border-0 rounded-4 p-4 text-center" style={{ maxWidth: "500px" }}>
+      <Card className="mb-3 shadow-lg border-0 rounded-4 p-4 text-center" style={{ maxWidth: "500px" }}>
         <h2 className="text-success mb-3">🎉 Booking Confirmed!</h2>
 
         <p><strong>Hotel:</strong> {state.hotelName}</p>

@@ -7,11 +7,16 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+  if (password!=confirmPassword){
+    alert("passwords didn't match")
+    return 
+  }
 
   try {
     await registerUser({
@@ -26,13 +31,13 @@ const Register = () => {
 };
   return (
     <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
-      <Card className="shadow-sm border-0 rounded-4 p-4" style={{ width: "400px" }}>
-        <h3 className="fw-bold mb-3 text-center">Register</h3>
+      <Card className="mb-3 shadow-lg border-0 rounded-4 p-4" style={{ width: "400px" }}>
+        <h3 className="fw-bold mb-2 text-center">Register</h3>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
+          <Form.Group >
             <Form.Label>Name</Form.Label>
             <Form.Control
               required
@@ -40,7 +45,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
+          <Form.Group >
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
@@ -49,7 +54,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
+          <Form.Group >
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -57,10 +62,19 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+          <Form.Group className="mb-1">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              type="password"
+              required
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </Form.Group>
 
           <Button type="submit" variant="primary" className="w-100 rounded-pill">
             Create Account
           </Button>
+        
         </Form>
       </Card>
     </Container>
